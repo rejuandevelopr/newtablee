@@ -1,0 +1,1393 @@
+
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+        .tables-main-part {
+            overflow-x: auto;
+        }
+        .tables-main-part .nav-link {
+            color: #4bb9b3;
+        }
+        table {
+            width: 100%;
+            max-width: 1160px;
+            margin: 0 auto;
+            margin-top: 40px;
+            border-spacing: 0;
+            border-collapse: separate;
+            overflow-x: auto;
+            border: 0 !important;
+        }
+        table td {
+            min-width: 200px;
+            border: 1px solid #cccccc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            line-height: 18px;
+            vertical-align: middle;
+            padding: 12px 0 11px 0 !important;
+            text-align: center;
+            font-weight: bold;
+            color: #000 !important;
+        }
+        .newprice-table tbody tr:first-child td {
+            background-color: #fff !important;
+        }
+        .newprice-table tbody tr:first-child td:first-child {
+            border-top-left-radius: 10px;
+            background: linear-gradient( 90deg, rgba(73, 181, 175, 1) 0%, rgba(73, 181, 175, 1) 0%, rgba(52, 136, 132, 1) 100%);
+            color: #fff;
+            text-align: left;
+            font-weight: bold;
+            padding-left: 21px !important;  
+        }
+        .newprice-table tbody tr td:first-child {
+            text-align: left;
+            padding-left: 21px !important; 
+            background: linear-gradient( 90deg, rgba(73, 181, 175, 1) 0%, rgba(73, 181, 175, 1) 0%, rgba(52, 136, 132, 1) 100%);
+            color: #fff;
+        }
+        .newprice-table tbody tr:nth-child(even) td:first-child {
+            background: linear-gradient( 90deg, rgba(236, 236, 236, 1) 0%, rgba(248, 248, 248, 1) 0%, rgba(237, 237, 237, 1) 100%) ;
+            text-align: left;
+            padding-left: 21px !important;  
+        }
+        .newprice-table tbody tr:nth-child(odd) td {
+           background-color: #fafafa;
+           
+        }
+        .newprice-table tbody tr:nth-child(odd) td:first-child {
+            color: #fff !important;
+        }
+        .newprice-table tbody tr:nth-child(18) td:first-child {
+            color: #000 !important;
+            font-size: 18px;
+        }
+        .newprice-table tbody tr:nth-child(18) td {
+            background-color: #4bb9b3;
+            color: #fff !important;
+            letter-spacing: 0.6px;
+            font-size: 22px;
+        }
+        .newprice-table tbody tr:nth-child(16) td,
+        .newprice-table tbody tr:nth-child(17) td {
+          background: #fff !important;
+        }
+        .newprice-table tbody tr:nth-child(17) td:first-child,
+        .newprice-table tbody tr:nth-child(18) td:first-child,
+        .newprice-table tbody tr:nth-child(19) td:first-child {
+          color: #fff;
+          background: linear-gradient( 90deg, rgba(73, 181, 175, 1) 0%, rgba(73, 181, 175, 1) 0%, rgba(52, 136, 132, 1) 100%) !important;
+        }
+        .newprice-table tbody tr:nth-child(18) td:first-child {
+          background: linear-gradient( 90deg, rgba(236, 236, 236, 1) 0%, rgba(248, 248, 248, 1) 0%, rgba(237, 237, 237, 1) 100%) !important;
+        }
+        .newprice-table tbody tr:nth-child(19) td:first-child {
+          border-bottom-left-radius: 10px;
+        }
+        .newprice-table tbody tr:nth-child(19) td:last-child {
+          border-bottom-right-radius: 10px;
+        }
+        .newprice-table thead tr th {
+           border-color: #cccccc;
+           border-top-left-radius: 11px;
+           border-top-right-radius: 11px;
+           border-bottom: none;
+           padding: 0;
+        }
+        .newprice-table thead tr th:first-child {
+            border: 0 !important;
+        }
+        .newprice-table thead tr th {
+           border-left: 1px solid #ccc;
+        }
+
+        .price-head h4 {
+             background-image: url('https://www.instaunicorn.com/wp-content/uploads/2021/08/pricing-title-bg.png');
+             background-repeat: no-repeat;
+             background-position: center top;
+             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+             margin: 0;
+             color: #fff;
+             text-transform: uppercase;
+             font-weight: 500;
+             letter-spacing: 0.5px;
+             font-size: 22px;
+             padding: 14px 0px;
+             border-top-left-radius: 10px;
+             border-top-right-radius: 10px;
+             background-size: cover;
+             text-align: center;
+        }
+        .price-head h2 {
+            background-image: url(https://www.instaunicorn.com/wp-content/uploads/2021/08/pricing-text-bg.jpg);
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 32px;
+            color: #272727;
+            padding: 11px 0px 24px 0;
+            background-size: cover;
+            text-align: center;
+            font-weight: 700;
+        }
+        .price-head h6 {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 12px;
+            margin-bottom: 8px;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+        .price-head span {
+            font-size: 16px;
+            display: block;
+            text-align: center;
+            color: #7A7A7A;
+            margin-top: 6px;
+        }
+        .price-head {
+           text-align: center;
+           padding-bottom: 20px;
+           border-bottom: 1px solid #ccc !important;
+           min-height: 233px;
+        }
+        .newprice-table thead th:nth-child(4) {
+            position: relative;
+        }
+        .newprice-table thead th:nth-child(4)::after {
+           content: url('https://www.instaunicorn.com/wp-content/uploads/2021/09/best-seller-tag.png');
+           position: absolute;
+           top: -15px;
+           transform: scale(0.75);
+           left: -11px;
+        }
+
+
+        /* Nav Tabs */
+        .nav-tabs {
+            --bs-nav-tabs-border-color: none;
+        } 
+        .nav-tabs .nav-item.show .nav-link, .nav-monyear-link {
+            position: relative;
+            top: 150px;
+            margin-left: 2%;
+            margin-top: -24px;
+            z-index: 99;
+
+            border: 2px solid #4bb9b3;
+            display: inline-block !important;
+            border-radius: 30px;
+            padding: 5px;
+            font-weight: bold;
+        }
+        .nav-tabs .nav-item.show .nav-link, .nav-monyear-link .nav-link {
+          border-radius: 40px;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          padding: 8px 20px;
+        }
+        .nav-tabs .nav-item.show .nav-link, .nav-monyear-link .nav-link.active {
+          border: 1px solid #4bb9b3;
+          background: linear-gradient( 90deg, rgba(73, 181, 175, 1) 0%, rgba(73, 181, 175, 1) 0%, rgba(52, 136, 132, 1) 100%);
+          color: #fff;
+        }
+        .navsocial-link {
+          border: 2px solid #4bb9b3;
+         
+          border-radius: 30px;
+          padding: 5px;
+          font-weight: bold;
+        }
+        .navsocial-link .nav-link {
+          border-radius: 40px;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          font-weight: bold;
+          padding: 8px 22px;
+        }
+        .navsocial-link .nav-link.active {
+          border: 1px solid #4bb9b3;
+          background: linear-gradient( 90deg, rgba(73, 181, 175, 1) 0%, rgba(73, 181, 175, 1) 0%, rgba(52, 136, 132, 1) 100%);
+          color: #fff;
+        }
+        .tab-content,
+        .tab-pane {
+          border: 0 !important;
+        }
+
+        @media screen and (max-width:1200px) {
+          .nav-tabs .nav-item.show .nav-link, .nav-monyear-link {
+            margin-left: 0%;
+          }
+          .nav-tabs .nav-item.show .nav-link, .nav-monyear-link .nav-link {
+            padding: 8px 16px;
+          }
+        }
+
+        @media screen and (max-width:992px) {
+          .nav-tabs .nav-item.show .nav-link, .nav-monyear-link .nav-link {
+            padding: 8px 12px;
+          }
+          .navsocial-link .nav-link {
+            padding: 8px 12px;
+          }
+        }
+    </style>
+  </head>
+  <body>
+
+    
+      <div class="tables-main-part mt-3 mb-3">
+        <ul class="nav nav-tabs d-flex justify-content-center">
+          <div class="d-flex">
+          </div>
+          <div class="d-flex navsocial-link">
+              <li class="nav-item">
+                  <a class="nav-link active" id="blockOne-tab" data-bs-toggle="tab" href="#blockOne">TikTok</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="blockTwo-tab" data-bs-toggle="tab" href="#blockTwo">Instagram</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="blockThree-tab" data-bs-toggle="tab" href="#blockThree">Thread</a>
+              </li>
+          </div>
+      </ul>
+      
+      <div class="tab-content">
+          <div class="tab-pane fade show active" id="blockOne">
+             <div class="container">
+
+              <ul class="nav nav-tabs d-flex justify-content-between nav-monyear-link">
+                  <div class="d-flex">
+                      <li class="nav-item">
+                          <a class="nav-link active" id="blockA-tab" data-bs-toggle="tab" href="#blockA">Monthly</a>
+                        </li>
+                      <li class="nav-item">
+                          <a class="nav-link" id="blockB-tab" data-bs-toggle="tab" href="#blockB">Yearly</a>
+                      </li>
+                  </div>
+              </ul>
+
+              <div class="tab-content mt-2">
+                  <div class="tab-pane fade show active" id="blockA">
+
+                      <!-- Tiktok Montly Table -->
+                      <table class="table newprice-table">
+                          <thead>
+                              <th></th>
+                              <th>
+                                  <div class="price-head">
+                                      <h4>BASIC</h4>
+                                      <h2>
+                                          <sup>$</sup>647
+                                      </h2>
+                                      <span>12 Months Contract</span>
+                                  </div>
+                              </th>
+                              <th>
+                                  <div class="price-head">
+                                      <h4>GROWTH</h4>
+                                      <h2>
+                                          <sup>$</sup>1,247
+                                      </h2>
+                                      <span>12 Months Contract</span>
+                                  </div>
+                              </th>
+                              <th>
+                                  <div class="price-head">
+                                      <h4>PRO</h4>
+                                      <h2>
+                                          <sup>$</sup>2,347
+                                      </h2>
+                                      <span>12 Months Contract</span>
+                                  </div>
+                              </th>
+                              <th style="border-right: 1px solid #ccc;">
+                                  <div class="price-head">
+                                      <h4>CUSTOM</h4>
+                                      <h2 style="display: flex; align-items: center; justify-content: center;">
+                                        <span style="font-size: 16px; margin-right: 12px;">Starting at</span><sup>$</sup>2,347
+                                      </h2>
+                                      <span>12 Months Contract</span>
+                                  </div>
+                              </th>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Targets</td>
+                              <td>10</td>
+                              <td>50</td>
+                              <td>100</td>
+                              <td>Unlimited</td>
+                            </tr>
+                            <tr>
+                              <td>Engagement</td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            </tr>
+                            <tr>
+                              <td>Followers Boost</td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              <td>Custom</td>
+                            </tr>
+                            <tr>
+                              <td>Likes Boost</td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            </tr>
+                            <tr>
+                              <td>Views Boost</td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            </tr>
+                            <tr>
+                              <td>Comments Boost</td>
+                              <td>5</td>
+                              <td>10</td>
+                              <td>20</td>
+                              <td>Custom</td>
+                            </tr>
+                            <tr>
+                              <td>Engagement Groups</td>
+                              <td>–</td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            </tr>
+                            <tr>
+                              <td>Story Views</td>
+                              <td>–</td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            </tr>
+                            <tr>
+                              <td>Story Comments</td>
+                              <td>–</td>
+                              <td>–</td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            </tr>
+                            <tr>
+                              <td>Explore Page Boost</td>
+                              <td>–</td>
+                              <td>–</td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            </tr>
+                            <tr>
+                              <td>Influencer groups</td>
+                              <td>–</td>
+                              <td>–</td>
+                              <td>1-3</td>
+                              <td>5-10</td>
+                            </tr>
+                            <tr>
+                              <td>ER% – Engagement Rate</td>
+                              <td>3%</td>
+                              <td>4%</td>
+                              <td>5%</td>
+                              <td>8%</td>
+                            </tr>
+                            <tr>
+                              <td>Research</td>
+                              <td>No</td>
+                              <td>No</td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            </tr>
+                            <tr>
+                              <td>Estimated Growth – Year</td>
+                              <td style="font-size: 20px;">25,000+</td>
+                              <td style="font-size: 20px;">75,000+</td>
+                              <td style="font-size: 20px;">150,000+</td>
+                              <td style="font-size: 20px;">300,000+</td>
+                            </tr>
+                            <tr>
+                              <td>Renewal</td>
+                              <td>Month to Month</td>
+                              <td>Month to Month</td>
+                              <td>Month to Month</td>
+                              <td>Month to Month</td>
+                            </tr>
+                            <tr>
+                              <td>2nd Account (50%)</td>
+                              <td>$947</td>
+                              <td>$1,847</td>
+                              <td>$3,447</td>
+                              <td>$4,497</td>
+                            </tr>
+                            <tr>
+                              <td>3rd Account (50%)</td>
+                              <td>$1,247</td>
+                              <td>$2,447</td>
+                              <td>$4,4547</td>
+                              <td>$5,997</td>
+                            </tr>
+                            <tr>
+                              <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">Setup fee</td>
+                              <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                              <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                              <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                              <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                            </tr>
+                          </tbody>
+                      </table>
+                    
+                  </div>
+              </div>
+              <div class="tab-content mt-2">
+                  <div class="tab-pane fade" id="blockB">
+
+                       <!-- Tiktok Yearly Table -->
+                       <table class="table newprice-table">
+                        <thead>
+                            <th></th>
+                            <th>
+                                <div class="price-head">
+                                    <h4>BASIC</h4>
+                                    <h2>
+                                        <sup>$</sup>587
+                                    </h2>
+                                    <h6>Billed at $6,999 / Year</h6>
+                                    <span>Save $789 (20% off)</span>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="price-head">
+                                    <h4>GROWTH</h4>
+                                    <h2>
+                                        <sup>$</sup>997
+                                    </h2>
+                                    <h6>Billed at $11,999 / Year</h6>
+                                    <span>Save $3,000 (20% off)</span>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="price-head">
+                                    <h4>PRO</h4>
+                                    <h2>
+                                        <sup>$</sup>1,667
+                                    </h2>
+                                    <h6>Billed at $19,999 / Year</h6>
+                                    <span>Save $8,189 (30% off)</span>
+                                </div>
+                            </th>
+                            <th style="border-right: 1px solid #ccc;">
+                                <div class="price-head">
+                                    <h4>CUSTOM</h4>
+                                    <h2>
+                                        Get a quote
+                                    </h2>
+                                    <h6>Starting at $29,999 / Year</h6>
+                                </div>
+                            </th>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Targets</td>
+                            <td>10</td>
+                            <td>50</td>
+                            <td>100</td>
+                            <td>Unlimited</td>
+                          </tr>
+                          <tr>
+                            <td>Engagement</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Followers Boost</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td>Custom</td>
+                          </tr>
+                          <tr>
+                            <td>Likes Boost</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Views Boost</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Comments Boost</td>
+                            <td>5</td>
+                            <td>10</td>
+                            <td>20</td>
+                            <td>Custom</td>
+                          </tr>
+                          <tr>
+                            <td>Engagement Groups</td>
+                            <td>–</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Story Views</td>
+                            <td>–</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Story Comments</td>
+                            <td>–</td>
+                            <td>–</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Explore Page Boost</td>
+                            <td>–</td>
+                            <td>–</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Influencer groups</td>
+                            <td>–</td>
+                            <td>–</td>
+                            <td>1-3</td>
+                            <td>5-10</td>
+                          </tr>
+                          <tr>
+                            <td>ER% – Engagement Rate</td>
+                            <td>3%</td>
+                            <td>4%</td>
+                            <td>5%</td>
+                            <td>8%</td>
+                          </tr>
+                          <tr>
+                            <td>Research</td>
+                            <td>No</td>
+                            <td>No</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Estimated Growth – Year</td>
+                            <td style="font-size: 20px;">25,000+</td>
+                            <td style="font-size: 20px;">75,000+</td>
+                            <td style="font-size: 20px;">150,000+</td>
+                            <td style="font-size: 20px;">300,000+</td>
+                          </tr>
+                          <tr>
+                            <td>Renewal</td>
+                            <td>Month to Month</td>
+                            <td>Month to Month</td>
+                            <td>Month to Month</td>
+                            <td>Month to Month</td>
+                          </tr>
+                          <tr>
+                            <td>2nd Account (50%)</td>
+                            <td>$947</td>
+                            <td>$1,847</td>
+                            <td>$3,447</td>
+                            <td>$4,497</td>
+                          </tr>
+                          <tr>
+                            <td>3rd Account (50%)</td>
+                            <td>$1,247</td>
+                            <td>$2,447</td>
+                            <td>$4,4547</td>
+                            <td>$5,997</td>
+                          </tr>
+                          <tr>
+                            <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">Setup fee</td>
+                            <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                            <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                            <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                            <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                     
+                  </div>
+              </div>
+              
+              
+             </div>
+          </div>
+      
+          <div class="tab-pane fade" id="blockTwo">
+              <div class="container">
+
+                  <ul class="nav nav-tabs d-flex justify-content-between nav-monyear-link">
+                      <div class="d-flex">
+                          <li class="nav-item">
+                              <a class="nav-link active" id="blockC-tab" data-bs-toggle="tab" href="#blockC">Monthly</a>
+                            </li>
+                          <li class="nav-item">
+                              <a class="nav-link" id="blockD-tab" data-bs-toggle="tab" href="#blockD">Yearly</a>
+                          </li>
+                      </div>
+                  </ul>
+  
+                  <div class="tab-content mt-2">
+                      <div class="tab-pane fade show active" id="blockC">
+
+                      <!-- Instagram Montly Table -->
+                      <table class="table newprice-table">
+                        <thead>
+                            <th></th>
+                            <th>
+                                <div class="price-head">
+                                    <h4>BASIC</h4>
+                                    <h2>
+                                        <sup>$</sup>647
+                                    </h2>
+                                    <span>12 Months Contract</span>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="price-head">
+                                    <h4>GROWTH</h4>
+                                    <h2>
+                                        <sup>$</sup>1,247
+                                    </h2>
+                                    <span>12 Months Contract</span>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="price-head">
+                                    <h4>PRO</h4>
+                                    <h2>
+                                        <sup>$</sup>2,347
+                                    </h2>
+                                    <span>12 Months Contract</span>
+                                </div>
+                            </th>
+                            <th style="border-right: 1px solid #ccc;">
+                                <div class="price-head">
+                                    <h4>CUSTOM</h4>
+                                    <h2 style="display: flex; align-items: center; justify-content: center;">
+                                      <span style="font-size: 16px; margin-right: 12px;">Starting at</span><sup>$</sup>2,347
+                                    </h2>
+                                    <span>12 Months Contract</span>
+                                </div>
+                            </th>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Targets</td>
+                            <td>10</td>
+                            <td>50</td>
+                            <td>100</td>
+                            <td>Unlimited</td>
+                          </tr>
+                          <tr>
+                            <td>Engagement</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Followers Boost</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td>Custom</td>
+                          </tr>
+                          <tr>
+                            <td>Likes Boost</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Views Boost</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Comments Boost</td>
+                            <td>5</td>
+                            <td>10</td>
+                            <td>20</td>
+                            <td>Custom</td>
+                          </tr>
+                          <tr>
+                            <td>Engagement Groups</td>
+                            <td>–</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Story Views</td>
+                            <td>–</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Story Comments</td>
+                            <td>–</td>
+                            <td>–</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Explore Page Boost</td>
+                            <td>–</td>
+                            <td>–</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Influencer groups</td>
+                            <td>–</td>
+                            <td>–</td>
+                            <td>1-3</td>
+                            <td>5-10</td>
+                          </tr>
+                          <tr>
+                            <td>ER% – Engagement Rate</td>
+                            <td>3%</td>
+                            <td>4%</td>
+                            <td>5%</td>
+                            <td>8%</td>
+                          </tr>
+                          <tr>
+                            <td>Research</td>
+                            <td>No</td>
+                            <td>No</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Estimated Growth – Year</td>
+                            <td style="font-size: 20px;">25,000+</td>
+                            <td style="font-size: 20px;">75,000+</td>
+                            <td style="font-size: 20px;">150,000+</td>
+                            <td style="font-size: 20px;">300,000+</td>
+                          </tr>
+                          <tr>
+                            <td>Renewal</td>
+                            <td>Month to Month</td>
+                            <td>Month to Month</td>
+                            <td>Month to Month</td>
+                            <td>Month to Month</td>
+                          </tr>
+                          <tr>
+                            <td>2nd Account (50%)</td>
+                            <td>$947</td>
+                            <td>$1,847</td>
+                            <td>$3,447</td>
+                            <td>$4,497</td>
+                          </tr>
+                          <tr>
+                            <td>3rd Account (50%)</td>
+                            <td>$1,247</td>
+                            <td>$2,447</td>
+                            <td>$4,4547</td>
+                            <td>$5,997</td>
+                          </tr>
+                          <tr>
+                            <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">Setup fee</td>
+                            <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                            <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                            <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                            <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      </div>
+                  </div>
+                  <div class="tab-content mt-2">
+                      <div class="tab-pane fade" id="blockD">
+
+                      <!-- Instagram Yearly Table -->
+                      <table class="table newprice-table">
+                        <thead>
+                            <th></th>
+                            <th>
+                                <div class="price-head">
+                                    <h4>BASIC</h4>
+                                    <h2>
+                                        <sup>$</sup>587
+                                    </h2>
+                                    <h6>Billed at $6,999 / Year</h6>
+                                    <span>Save $789 (20% off)</span>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="price-head">
+                                    <h4>GROWTH</h4>
+                                    <h2>
+                                        <sup>$</sup>997
+                                    </h2>
+                                    <h6>Billed at $11,999 / Year</h6>
+                                    <span>Save $3,000 (20% off)</span>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="price-head">
+                                    <h4>PRO</h4>
+                                    <h2>
+                                        <sup>$</sup>1,667
+                                    </h2>
+                                    <h6>Billed at $19,999 / Year</h6>
+                                    <span>Save $8,189 (30% off)</span>
+                                </div>
+                            </th>
+                            <th style="border-right: 1px solid #ccc;">
+                                <div class="price-head">
+                                    <h4>CUSTOM</h4>
+                                    <h2>
+                                        Get a quote
+                                    </h2>
+                                    <h6>Starting at $29,999 / Year</h6>
+                                </div>
+                            </th>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Targets</td>
+                            <td>10</td>
+                            <td>50</td>
+                            <td>100</td>
+                            <td>Unlimited</td>
+                          </tr>
+                          <tr>
+                            <td>Engagement</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Followers Boost</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td>Custom</td>
+                          </tr>
+                          <tr>
+                            <td>Likes Boost</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Views Boost</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Comments Boost</td>
+                            <td>5</td>
+                            <td>10</td>
+                            <td>20</td>
+                            <td>Custom</td>
+                          </tr>
+                          <tr>
+                            <td>Engagement Groups</td>
+                            <td>–</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Story Views</td>
+                            <td>–</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Story Comments</td>
+                            <td>–</td>
+                            <td>–</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Explore Page Boost</td>
+                            <td>–</td>
+                            <td>–</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Influencer groups</td>
+                            <td>–</td>
+                            <td>–</td>
+                            <td>1-3</td>
+                            <td>5-10</td>
+                          </tr>
+                          <tr>
+                            <td>ER% – Engagement Rate</td>
+                            <td>3%</td>
+                            <td>4%</td>
+                            <td>5%</td>
+                            <td>8%</td>
+                          </tr>
+                          <tr>
+                            <td>Research</td>
+                            <td>No</td>
+                            <td>No</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Estimated Growth – Year</td>
+                            <td style="font-size: 20px;">25,000+</td>
+                            <td style="font-size: 20px;">75,000+</td>
+                            <td style="font-size: 20px;">150,000+</td>
+                            <td style="font-size: 20px;">300,000+</td>
+                          </tr>
+                          <tr>
+                            <td>Renewal</td>
+                            <td>Month to Month</td>
+                            <td>Month to Month</td>
+                            <td>Month to Month</td>
+                            <td>Month to Month</td>
+                          </tr>
+                          <tr>
+                            <td>2nd Account (50%)</td>
+                            <td>$947</td>
+                            <td>$1,847</td>
+                            <td>$3,447</td>
+                            <td>$4,497</td>
+                          </tr>
+                          <tr>
+                            <td>3rd Account (50%)</td>
+                            <td>$1,247</td>
+                            <td>$2,447</td>
+                            <td>$4,4547</td>
+                            <td>$5,997</td>
+                          </tr>
+                          <tr>
+                            <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">Setup fee</td>
+                            <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                            <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                            <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                            <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                          </tr>
+                        </tbody>
+                    </table>
+
+                      </div>
+                  </div>
+                  
+              </div>
+            </div>
+          
+            <div class="tab-pane fade" id="blockThree">
+              <div class="container">
+
+                  <ul class="nav nav-tabs d-flex justify-content-between nav-monyear-link">
+                      <div class="d-flex">
+                          <li class="nav-item">
+                              <a class="nav-link active" id="blockE-tab" data-bs-toggle="tab" href="#blockE">Monthly</a>
+                            </li>
+                          <li class="nav-item">
+                              <a class="nav-link" id="blockF-tab" data-bs-toggle="tab" href="#blockF">Yearly</a>
+                          </li>
+                      </div>
+                  </ul>
+  
+                  <div class="tab-content mt-2">
+                      <div class="tab-pane fade show active" id="blockE">
+
+                      <!-- Threads Montly Table -->
+                      <table class="table newprice-table">
+                        <thead>
+                            <th></th>
+                            <th>
+                                <div class="price-head">
+                                    <h4>BASIC</h4>
+                                    <h2>
+                                        <sup>$</sup>647
+                                    </h2>
+                                    <span>12 Months Contract</span>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="price-head">
+                                    <h4>GROWTH</h4>
+                                    <h2>
+                                        <sup>$</sup>1,247
+                                    </h2>
+                                    <span>12 Months Contract</span>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="price-head">
+                                    <h4>PRO</h4>
+                                    <h2>
+                                        <sup>$</sup>2,347
+                                    </h2>
+                                    <span>12 Months Contract</span>
+                                </div>
+                            </th>
+                            <th style="border-right: 1px solid #ccc;">
+                                <div class="price-head">
+                                    <h4>CUSTOM</h4>
+                                    <h2 style="display: flex; align-items: center; justify-content: center;">
+                                      <span style="font-size: 16px; margin-right: 12px;">Starting at</span><sup>$</sup>2,347
+                                    </h2>
+                                    <span>12 Months Contract</span>
+                                </div>
+                            </th>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Targets</td>
+                            <td>10</td>
+                            <td>50</td>
+                            <td>100</td>
+                            <td>Unlimited</td>
+                          </tr>
+                          <tr>
+                            <td>Engagement</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Followers Boost</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td>Custom</td>
+                          </tr>
+                          <tr>
+                            <td>Likes Boost</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Views Boost</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Comments Boost</td>
+                            <td>5</td>
+                            <td>10</td>
+                            <td>20</td>
+                            <td>Custom</td>
+                          </tr>
+                          <tr>
+                            <td>Engagement Groups</td>
+                            <td>–</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Story Views</td>
+                            <td>–</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Story Comments</td>
+                            <td>–</td>
+                            <td>–</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Explore Page Boost</td>
+                            <td>–</td>
+                            <td>–</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Influencer groups</td>
+                            <td>–</td>
+                            <td>–</td>
+                            <td>1-3</td>
+                            <td>5-10</td>
+                          </tr>
+                          <tr>
+                            <td>ER% – Engagement Rate</td>
+                            <td>3%</td>
+                            <td>4%</td>
+                            <td>5%</td>
+                            <td>8%</td>
+                          </tr>
+                          <tr>
+                            <td>Research</td>
+                            <td>No</td>
+                            <td>No</td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                            <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                          </tr>
+                          <tr>
+                            <td>Estimated Growth – Year</td>
+                            <td style="font-size: 20px;">25,000+</td>
+                            <td style="font-size: 20px;">75,000+</td>
+                            <td style="font-size: 20px;">150,000+</td>
+                            <td style="font-size: 20px;">300,000+</td>
+                          </tr>
+                          <tr>
+                            <td>Renewal</td>
+                            <td>Month to Month</td>
+                            <td>Month to Month</td>
+                            <td>Month to Month</td>
+                            <td>Month to Month</td>
+                          </tr>
+                          <tr>
+                            <td>2nd Account (50%)</td>
+                            <td>$947</td>
+                            <td>$1,847</td>
+                            <td>$3,447</td>
+                            <td>$4,497</td>
+                          </tr>
+                          <tr>
+                            <td>3rd Account (50%)</td>
+                            <td>$1,247</td>
+                            <td>$2,447</td>
+                            <td>$4,4547</td>
+                            <td>$5,997</td>
+                          </tr>
+                          <tr>
+                            <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">Setup fee</td>
+                            <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                            <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                            <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                            <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                       
+
+                      </div>
+                  </div>
+                  <div class="tab-content mt-2">
+                      <div class="tab-pane fade" id="blockF">
+                          
+                          <!-- Threads Yearly Table -->
+                          <table class="table newprice-table">
+                            <thead>
+                                <th></th>
+                                <th>
+                                    <div class="price-head">
+                                        <h4>BASIC</h4>
+                                        <h2>
+                                            <sup>$</sup>587
+                                        </h2>
+                                        <h6>Billed at $6,999 / Year</h6>
+                                        <span>Save $789 (20% off)</span>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="price-head">
+                                        <h4>GROWTH</h4>
+                                        <h2>
+                                            <sup>$</sup>997
+                                        </h2>
+                                        <h6>Billed at $11,999 / Year</h6>
+                                        <span>Save $3,000 (20% off)</span>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="price-head">
+                                        <h4>PRO</h4>
+                                        <h2>
+                                            <sup>$</sup>1,667
+                                        </h2>
+                                        <h6>Billed at $19,999 / Year</h6>
+                                        <span>Save $8,189 (30% off)</span>
+                                    </div>
+                                </th>
+                                <th style="border-right: 1px solid #ccc;">
+                                    <div class="price-head">
+                                        <h4>CUSTOM</h4>
+                                        <h2>
+                                            Get a quote
+                                        </h2>
+                                        <h6>Starting at $29,999 / Year</h6>
+                                    </div>
+                                </th>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Targets</td>
+                                <td>10</td>
+                                <td>50</td>
+                                <td>100</td>
+                                <td>Unlimited</td>
+                              </tr>
+                              <tr>
+                                <td>Engagement</td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              </tr>
+                              <tr>
+                                <td>Followers Boost</td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                                <td>Custom</td>
+                              </tr>
+                              <tr>
+                                <td>Likes Boost</td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              </tr>
+                              <tr>
+                                <td>Views Boost</td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              </tr>
+                              <tr>
+                                <td>Comments Boost</td>
+                                <td>5</td>
+                                <td>10</td>
+                                <td>20</td>
+                                <td>Custom</td>
+                              </tr>
+                              <tr>
+                                <td>Engagement Groups</td>
+                                <td>–</td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              </tr>
+                              <tr>
+                                <td>Story Views</td>
+                                <td>–</td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              </tr>
+                              <tr>
+                                <td>Story Comments</td>
+                                <td>–</td>
+                                <td>–</td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              </tr>
+                              <tr>
+                                <td>Explore Page Boost</td>
+                                <td>–</td>
+                                <td>–</td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              </tr>
+                              <tr>
+                                <td>Influencer groups</td>
+                                <td>–</td>
+                                <td>–</td>
+                                <td>1-3</td>
+                                <td>5-10</td>
+                              </tr>
+                              <tr>
+                                <td>ER% – Engagement Rate</td>
+                                <td>3%</td>
+                                <td>4%</td>
+                                <td>5%</td>
+                                <td>8%</td>
+                              </tr>
+                              <tr>
+                                <td>Research</td>
+                                <td>No</td>
+                                <td>No</td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                                <td><img src="https://test.instaunicorn.com/public_html/test.instaunicorn.com/wp-content/uploads/2021/08/check-img.png" alt="Check Icon"></td>
+                              </tr>
+                              <tr>
+                                <td>Estimated Growth – Year</td>
+                                <td style="font-size: 20px;">25,000+</td>
+                                <td style="font-size: 20px;">75,000+</td>
+                                <td style="font-size: 20px;">150,000+</td>
+                                <td style="font-size: 20px;">300,000+</td>
+                              </tr>
+                              <tr>
+                                <td>Renewal</td>
+                                <td>Month to Month</td>
+                                <td>Month to Month</td>
+                                <td>Month to Month</td>
+                                <td>Month to Month</td>
+                              </tr>
+                              <tr>
+                                <td>2nd Account (50%)</td>
+                                <td>$947</td>
+                                <td>$1,847</td>
+                                <td>$3,447</td>
+                                <td>$4,497</td>
+                              </tr>
+                              <tr>
+                                <td>3rd Account (50%)</td>
+                                <td>$1,247</td>
+                                <td>$2,447</td>
+                                <td>$4,4547</td>
+                                <td>$5,997</td>
+                              </tr>
+                              <tr>
+                                <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">Setup fee</td>
+                                <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                                <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                                <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                                <td style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">$750</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                      </div>
+                  </div>
+                  
+              </div>
+            </div>
+      </div>
+
+      </div>
+       
+   
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+  </html>
